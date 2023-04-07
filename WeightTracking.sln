@@ -5,6 +5,8 @@ VisualStudioVersion = 25.0.1705.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeightTracking", "WeightTracking\WeightTracking.csproj", "{29A6304E-1C58-4EA5-B51D-13A32D348931}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeightTrackingTest", "WeightTrackingTest\WeightTrackingTest.csproj", "{37F7D82B-3750-4406-A5F1-3E64B0A28D3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{29A6304E-1C58-4EA5-B51D-13A32D348931}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29A6304E-1C58-4EA5-B51D-13A32D348931}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29A6304E-1C58-4EA5-B51D-13A32D348931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37F7D82B-3750-4406-A5F1-3E64B0A28D3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37F7D82B-3750-4406-A5F1-3E64B0A28D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37F7D82B-3750-4406-A5F1-3E64B0A28D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37F7D82B-3750-4406-A5F1-3E64B0A28D3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
