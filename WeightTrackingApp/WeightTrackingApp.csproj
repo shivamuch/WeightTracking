@@ -13,6 +13,10 @@
     <None Remove="Areas\" />
     <None Remove="Areas\Identity\" />
     <None Remove="Areas\Identity\Pages\" />
+    <None Remove="Views\BMICalculater\" />
+    <None Remove="Views\Home\" />
+    <None Remove="Views\Shared\" />
+    <None Remove="Views\WeightTraining\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -20,6 +24,10 @@
     <Folder Include="Areas\" />
     <Folder Include="Areas\Identity\" />
     <Folder Include="Areas\Identity\Pages\" />
+    <Folder Include="Views\BMICalculater\" />
+    <Folder Include="Views\Home\" />
+    <Folder Include="Views\Shared\" />
+    <Folder Include="Views\WeightTraining\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Properties\serviceDependencies.json" />
@@ -29,5 +37,12 @@
     <None Include="Properties\serviceDependencies.json" />
     <None Include="Properties\serviceDependencies.local.json" />
     <None Include="Properties\serviceDependencies.local.json.user" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.16" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.16" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 </Project>
