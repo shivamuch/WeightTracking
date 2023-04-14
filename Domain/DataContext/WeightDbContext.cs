@@ -1,12 +1,22 @@
-﻿using System;
+﻿using Domain.DomainClasses;
+using Domain.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.DataContext
 {
-    internal class WeightDbContext
+    public class WeightDbContext : IdentityDbContext
     {
+        // define the DbSet
+        public DbSet<WeightHistory> WeightHistory { get; set; }
+        //public DbSet<User> Users { get; set; }
+        public WeightDbContext
+            (DbContextOptions<WeightDbContext> options) : base(options)
+        {
+        }
+
     }
 }
