@@ -1,4 +1,5 @@
-﻿using Domain.DataContext;
+﻿
+using Domain.DataContext;
 using Domain.DomainClasses;
 using Domain.IService;
 using Domain.Models;
@@ -59,7 +60,23 @@ namespace Domain.Services
             return await ctx.WeightHistory.ToListAsync();
         }
 
-        
+        public async Task<WeightHistory> GetAsync(int id)
+        {
+            return await ctx.WeightHistory.FindAsync(id);
+        }
+
+        public async Task<WeightHistory> UpdateAsync(int id, WeightHistory entity)
+        {
+            // seacrh record based on Primary key
+            var cat = await ctx.WeightHistory.FindAsync(id);
+            if (cat != null)
+            {
+                cat.Value = entity.Value;
+                cat.Id = cat.Id;
+                cat.Fk_UserId = cat.Fk_UserId;
+                await ctx.SaveChangesAsync();
+            }
+            return cat;
         }
     }
 }
