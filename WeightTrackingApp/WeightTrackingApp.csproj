@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Core_WebApp' " />
   <ItemGroup>
     <None Remove="Controllers\" />
     <None Remove="Views\" />
