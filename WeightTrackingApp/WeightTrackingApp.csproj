@@ -6,4 +6,27 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Controllers\" />
+    <None Remove="Views\" />
+    <None Remove="Areas\" />
+    <None Remove="Areas\Identity\" />
+    <None Remove="Areas\Identity\Pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Views\" />
+    <Folder Include="Areas\" />
+    <Folder Include="Areas\Identity\" />
+    <Folder Include="Areas\Identity\Pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Properties\serviceDependencies.json" />
+    <Content Remove="Properties\serviceDependencies.local.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\serviceDependencies.json" />
+    <None Include="Properties\serviceDependencies.local.json" />
+    <None Include="Properties\serviceDependencies.local.json.user" />
+  </ItemGroup>
 </Project>
