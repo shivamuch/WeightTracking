@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.Models
 {
-    internal class BMIResponse
+    public class BMIResponse
     {
+        public string txtYourBmi { get; set; }
+        public string lblMessage { get; set; }
+        public string lblMessageError { get; set; }
+        public string lblIdealWeight1 { get; set; }
+        public string lblIdealWeight2 { get; set; }
     }
 }

@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.Models
 {
-    internal class BMIRequest
+    public class BMIRequest
     {
+        public string ddlHeight { get; set; }
+        public string txtHeight { get; set; }
+        public string txtWeight { get; set; }
+        public string rdbGender { get; set; }
     }
 }
