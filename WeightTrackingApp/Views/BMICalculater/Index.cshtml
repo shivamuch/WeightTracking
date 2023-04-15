@@ -1,0 +1,280 @@
+﻿@{
+    ViewData["Title"] = "BMI Calculater";
+}
+
+@*<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>*@
+<article style="margin-bottom:20px;">
+    <div class="card">
+
+        <div class="card-body">
+            <div class="row">
+                @*<form action="/tools/BMI-calculator" method="post" enctype="multipart/form-data">*@
+                <div class="form-group col-md-3">
+                    <div style="color:red" id="lblMessageError"></div>
+
+                    <label for="txtHeight">Height (in in/cm/ft)</label>
+                    <select name="ddlHeight" id="ddlHeight" class="form-control" required="true">
+                        <option value="">Height Type</option>
+                        <option value="CM">Centimeter(CM.)</option>
+                        <option value="Inches">Inches</option>
+                        <option value="Feet">Feet</option>
+                    </select>
+
+                    <span style="color:red" class="error" id="ddlHeightError"></span>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="txtHeight">Height</label>
+                    <input name="txtHeight" type="text" id="txtHeight" class="form-control" required>
+                    <span style="color:red" class="error" id="txtHeightError"></span>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="txtWeight">Weight (in Kg)</label>
+                    <input name="txtWeight" type="number" id="txtWeight" class="form-control" required>
+                    <span style="color:red" class="error" id="txtWeightError"></span>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label for="rdbGender">Gender </label>
+                    <div class="form-inline" style="color: #000;">
+
+                        <table id="rdbGender" class="form-control rbl" border="0" style="margin-top:4px;">
+                            <tbody>
+                                <tr>
+                                    <td><input id="rdbGender_0" type="radio" name="rdbGender" value="MALE" checked="checked">MALE</td>
+                                    <td><input id="rdbGender_1" type="radio" name="rdbGender" value="FEMALE">FEMALE</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+                <input type="submit" name="btnBMICalCulate" value="Calculate" id="btnBMICalCulate" class="btn btn-lg btn-primary pull-center">
+                @*</form>*@
+            </div>
+            <br>
+            <table class="table table-bordered table-striped" width="100%" id="tbl_BMI_details">
+                <tr class="bg-primary text-light text-center"><th colspan="2"><h3>Calculated BMI Results</h3></th></tr>
+                <tr><td><strong>Your BMI: </strong></td><td><strong><span class="text-primary" id="txtYourBmi"></span></strong></td></tr>
+                <tr><td><strong>Health status: </strong></td><td><strong><span class="text-primary" id="lblMessage"> </span></strong></td></tr>
+                <tr><td><strong>Your Ideal body weight: </strong></td><td><strong><span class="text-primary" id="lblIdealWeight1"></span></strong></td></tr>
+
+            </table>
+            <table class="table dtableheading table-hover table-striped table-bordered time">
+                <tbody>
+                    <tr>
+                        <td class="txt">Health status </td>
+                        <td class="txt"> BMI range</td>
+                    </tr>
+                    <tr>
+                        <td class="txt">under weight </td>
+                        <td class="txt">  &lt;18.5</td>
+                    </tr>
+                    <tr>
+                        <td class="txt">normal weight    </td>
+                        <td class="txt"> 18.5-  23</td>
+                    </tr>
+                    <tr>
+                        <td class="txt">over weight  </td>
+                        <td class="txt"> 23 - 25</td>
+                    </tr>
+                    <tr>
+                        <td class="txt">obese</td>
+                        <td class="txt">  &gt;25</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+            <div style="overflow-x:auto;">
+                <table class="table dtableheading table-hover table-striped table-bordered time">
+                    <tbody>
+                        <tr>
+                            <td height="20" colspan="5" bgcolor="#EBEBEB"><p class="style3"><strong>&nbsp;&nbsp;</strong>BMI Notation Chart </p></td>
+                        </tr>
+                        <tr>
+                            <td height="20" bgcolor="f9f9f9"><p class="style3"><strong>&nbsp;&nbsp;</strong>Age Group </p></td>
+                            <td height="20" bgcolor="f9f9f9"><p class="style3"><strong>&nbsp;&nbsp;</strong>Recommended </p></td>
+                            <td height="20" bgcolor="f9f9f9"><p class="style3"><strong>&nbsp;&nbsp;</strong>Overweight </p></td>
+                            <td height="20" bgcolor="f9f9f9"><p class="style3"><strong>&nbsp;&nbsp;</strong>Obese </p></td>
+                            <td height="20" bgcolor="f9f9f9"><p class="style3"><strong>&nbsp;&nbsp;</strong>Extremely Obese </p></td>
+                        </tr>
+                        <tr>
+                            <td height="20" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>under 17</p></td>
+                            <td height="20" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>15-20</p></td>
+                            <td height="20" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>21+</p></td>
+                            <td height="20" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>26+</p></td>
+                            <td height="20" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>34+</p></td>
+                        </tr>
+                        <tr>
+                            <td height="20" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>under 35</p></td>
+                            <td height="20" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>18-24</p></td>
+                            <td height="20" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>25+</p></td>
+                            <td height="20" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>30+</p></td>
+                            <td height="20" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>40+</p></td>
+                        </tr>
+                        <tr>
+                            <td height="20" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>35 and over</p></td>
+                            <td height="20" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>19-26</p></td>
+                            <td height="20" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>27+</p></td>
+                            <td height="20" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>30+</p></td>
+                            <td height="20" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>40+</p></td>
+                        </tr>
+                        <tr>
+                            <td height="20" colspan="5" bgcolor="f9f9f9"><p class="style4"><strong>BMI values below 19 for men and 18 for women indicate an    underweight condition.</strong> </p></td>
+                        </tr>
+                        <tr>
+                            <td height="20" bgcolor="f9f9f9"></td>
+                            <td height="20" bgcolor="f9f9f9"></td>
+                            <td height="20" bgcolor="f9f9f9"></td>
+                            <td height="20" bgcolor="f9f9f9"></td>
+                            <td height="20" bgcolor="f9f9f9"></td>
+                        </tr>
+                        <tr>
+                            <td height="20" colspan="5" bgcolor="#EBEBEB"><p class="style4"><strong>&nbsp;&nbsp;Calorie Table</strong> </p></td>
+                        </tr>
+                        <tr>
+                            <td height="20" colspan="2" bgcolor="f9f9f9"><p align="left" class="style4"><strong>&nbsp;&nbsp;Exercise</strong> </p></td>
+                            <td height="20" colspan="3" bgcolor="f9f9f9"><p align="left" class="style4"><strong>&nbsp;&nbsp;Approximate Calories Burned</strong> </p></td>
+                        </tr>
+
+                        <tr>
+                            <td height="20" colspan="2" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>Walking (brisk)</p></td>
+                            <td height="20" colspan="3" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>100 calories burned    per mile</p></td>
+                        </tr>
+                        <tr>
+                            <td height="20" colspan="2" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>Jogging</p></td>
+                            <td height="20" colspan="3" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>120 calories burned    per mile</p></td>
+                        </tr>
+                        <tr>
+                            <td height="20" colspan="2" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>Swimming</p></td>
+                            <td height="20" colspan="3" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>100 calories burned    in 20 minutes</p></td>
+                        </tr>
+                        <tr>
+                            <td height="20" colspan="2" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>Bicycling (easy    pace)</p></td>
+                            <td height="20" colspan="3" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>100 calories burned    in 20 minutes</p></td>
+                        </tr>
+                        <tr>
+                            <td height="20" colspan="2" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>Aerobic exercise to    music</p></td>
+                            <td height="20" colspan="3" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>100 calories burned in    20 minutes</p></td>
+                        </tr>
+                        <tr>
+                            <td height="20" colspan="2" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>Gardening (vigorous)</p></td>
+                            <td height="20" colspan="3" bgcolor="f9f9f9"><p class="style4"><strong>&nbsp;&nbsp;</strong>100 calories burned    in 30 minutes</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-row col-md-12">
+                                <div class="form-group col-md-4">
+                                    <img src="/images/BMI-Calculator.jpg" alt="BMI Calculator" style="max-height:133px;">
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <h1 class="h3">What is a BMI calculator?</h1>
+                                    <p style="text-align:justify">Today the busy life scenario everyone has no time to make healthy food so they just go to the market and take some fast food as a breakfast, lunch, and dinner which increase the <b>Standard Body Mass Index</b>. According to the <b>National Institutes of Health (NIH)</b> that "A BMI of less than 18.5 means that a person is underweight. A <b>Body Mass Index</b> of between 18.5 and 24.9 is ideal. If it between 25 and 29.9 is overweight." So it should be necessary to take help of BMI Calculator for maintaining good health.</p>
+                                </div>
+                            </div>
+                            <h1 class="h3">How BMI (Body Mass Index) calculator Help you?</h1>
+                            <p style="text-align:justify">The <b>BMI (Body Mass Index) Calculator</b> helps you to check the current status of your body to take precaution before you got a heavyweight or losing weight, so everyone needs to take the help of a <b>Body Mass Index or BMI Calculator</b> to measure this for good health to reduce obesity.</p>
+                            <h1 class="h3">What is the ideal BMI for a woman? And how BMI calculator can help you?</h1>
+                            <p style="text-align:justify">The healthy BMI range is the same for men and women, so the results apply to both. <b>The healthy traditional weight vary could be a </b> BMI between eighteen.5 and 24.9. A body mass index of 22 is in the middle of that range. With the help of <b>BMI Calculator</b>, you can measure your current status of your Body Mass Index (BMI).</p>
+                            <h2>How BMI Calculator is helpful for your kids?</h2>
+                            <p style="text-align:justify">The BMI Calculator follows a <b>model for kids</b> that, If your kid is a 14-year-old kid who is 5ft 3 inches tall and gauges 120 pounds, for instance, his BMI is 21.3 which places him in the 76th percentile. This BMI figure shows that he is at a sound weight because the correct range is somewhere in the range of 90 and 128 pounds, in this case, you can take help of the BMI calculator. Because it not only shows the Body Mass Index also gives you a diet chart for your kids.</p>
+                            <h1 class="h3">How can I reduce my weight?</h1>
+                            <ul>
+                                <li><b>Here area unit ten tips to thin even faster:</b></li>
+                                <li>1. Eat a high-protein breakfast.</li>
+                                <li>2. Avoid sugary drinks and fruit juice.</li>
+                                <li>3. Drink water a half hour before meals.</li>
+                                <li>4. Drink coffee or tea.</li>
+                                <li>5. Eat mostly whole, unprocessed foods.</li>
+                                <li>6. Eat your food slowly.</li>
+                                <li>7. Weigh yourself every day.</li>
+                                <li>8. Get a good night's sleep, every night.</li>
+                                <li>9. Choose weight loss-friendly foods.</li>
+                                <li>10. Eat soluble fiber.</li>
+                            </ul>
+                            <p style="text-align:justify">By using the <b>BMI Calculator</b> you can take help for maintaining the <b>Body Mass Index.</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</article>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    $("#btnBMICalCulate").click(function () {
+        var ddlHeight = $("#ddlHeight").val();
+        var txtHeight = $("#txtHeight").val();
+        var txtWeight = $("#txtWeight").val();
+        var rdbGender = $("input[name='rdbGender']:checked").val();
+
+        if (ddlHeight == null || ddlHeight == '') {
+            $("#ddlHeightError").text('Please Select Height Type');
+        } else if (txtHeight == null || txtHeight == '') {
+            $("#txtHeightError").text('Please enter height');
+        } else if (txtWeight == null || txtWeight == '') {
+            $("#txtWeightError").text('Please enter weight');
+        } else {
+
+            $.ajax({
+                type: 'GET',
+                url: '/BMICalculater/BMICalculatorResult',
+                dataType: 'json',
+                data: { ddlHeight, txtHeight, txtWeight, rdbGender },
+                success: function (data) {
+
+                    $("#txtYourBmi").text(data.txtYourBmi);
+                    $("#lblMessage").text(data.lblMessage);
+                    $("#lblIdealWeight1").text(data.lblIdealWeight1);
+                    $("#lblIdealWeight2").text(data.lblIdealWeight2);
+                    if (data.lblMessageError != null && data.lblMessageError != '') {
+                        $("#lblMessageError").text(data.lblMessageError);
+                    } else {
+                        $("#lblMessageError").text('');
+                    };
+
+                },
+                error: function () {
+                    alert('An error occurred');
+                }
+            });
+        }
+    });
+
+    $("#ddlHeight").change(function () {
+        var ddlHeight = $("#ddlHeight").val();
+        if (ddlHeight == null || ddlHeight == '') {
+            $("#ddlHeightError").text('Please Select Height Type');
+        } else {
+            $("#ddlHeightError").text('');
+        }
+    });
+    $("#txtHeight").change(function () {
+
+        var txtHeight = $("#txtHeight").val();
+        if (txtHeight == null || txtHeight == '') {
+            $("#txtHeightError").text('Please enter height');
+        } else {
+            $("#txtHeightError").text('');
+        }
+    });
+
+    $("#txtWeight").change(function () {
+        var txtWeight = $("#txtWeight").val();
+        if (txtWeight == null || txtWeight == '') {
+            $("#txtWeightError").text('Please enter weight');
+        } else {
+            $("#txtWeightError").text('');
+        }
+    });
+</script>
