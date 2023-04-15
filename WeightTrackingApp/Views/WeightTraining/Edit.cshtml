@@ -1,0 +1,13 @@
+﻿@model WeightHistory
+
+<h1>Create new weight entry</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Value" class="control-label"></label>
+        <input asp-for="Value" class="form-control" />
+        <span asp-validation-for="Value" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

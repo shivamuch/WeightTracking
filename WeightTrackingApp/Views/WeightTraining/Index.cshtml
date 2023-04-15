@@ -1,0 +1,31 @@
+﻿@model IEnumerable<WeightHistory>
+
+<h1>Weight History</h1>
+
+<p>
+    <a asp-action="Create">Add new weight entry</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Value</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var weight in Model)
+        {
+            <tr>
+                <td>@weight.Date.ToShortDateString()</td>
+                <td>@weight.Value</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@weight.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@weight.Id">Delete</a> |
+                    <a asp-action="Details" asp-route-id="@weight.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
