@@ -11,5 +11,6 @@ namespace Domain.Models
         public string lblMessageError { get; set; }
         public string lblIdealWeight1 { get; set; }
         public string lblIdealWeight2 { get; set; }
+        public string SetlblIdealWeight1 { get; set; }
     }
 }

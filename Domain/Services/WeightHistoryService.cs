@@ -1,5 +1,4 @@
-﻿
-using Domain.DataContext;
+﻿using Domain.DataContext;
 using Domain.DomainClasses;
 using Domain.IService;
 using Domain.Models;

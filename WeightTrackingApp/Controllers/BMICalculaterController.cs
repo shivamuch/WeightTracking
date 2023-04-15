@@ -40,7 +40,7 @@ namespace Core_WebApp.Controllers
         public async Task<JsonResult> BMICalculatorResult(string ddlHeight, string txtHeight, string txtWeight, string rdbGender)
         {
             //var client = _clientFactory.CreateClient();
-            //var response12 = await client.GetAsync("https://localhost:7178/api/WeightAPI");
+            //var response12 = await client.GetAsync("https://localhost:7236/api/WeightAPI");
 
 
             BMIRequest request = new BMIRequest()
@@ -62,10 +62,10 @@ namespace Core_WebApp.Controllers
             // Send the POST request to the API
             var client = _clientFactory.CreateClient();
 
-            var response = await client.GetAsync("https://localhost:7178/api/WeightAPI/BMICalculator/" + ddlHeight + "/" + txtHeight + "/" + txtWeight + "/" + rdbGender);
+            var response = await client.GetAsync("https://localhost:7236/api/WeightAPI/BMICalculator/" + ddlHeight + "/" + txtHeight + "/" + txtWeight + "/" + rdbGender);
 
 
-            // HttpResponseMessage response = await client.PostAsync("https://localhost:7178/api/WeightAPI", content);
+            // HttpResponseMessage response = await client.PostAsync("https://localhost:7236/api/WeightAPI", content);
 
             // Check if the request was successful
             if (response.IsSuccessStatusCode)

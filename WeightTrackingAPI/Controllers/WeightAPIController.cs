@@ -169,7 +169,7 @@ namespace WeightTrackingAPI.Controllers
             //list.Add(new { txtYourBmi = txtYourEmi, lblMessage = lblMessage, lblIdealWeight1 = lblIdealWeight1, lblIdealWeight2 = lblIdealWeight2, lblMessageError = lblMessageError });
             list.txtYourBmi = txtYourEmi;
             list.lblMessage = lblMessage;
-            list.lblIdealWeight1 = lblIdealWeight1;
+            list.SetlblIdealWeight1 = lblIdealWeight1;
             list.lblIdealWeight2 = lblIdealWeight2;
             list.lblMessageError = lblMessageError;
 

@@ -20,7 +20,7 @@ namespace WeightTrackingApp.Controllers
         public WeightTrackingController(HttpClient client)
         {
             _client = client;
-            _client.BaseAddress = new Uri("https://localhost:7178"); // Replace with the base URL of your API
+            _client.BaseAddress = new Uri("https://localhost:7236"); // Replace with the base URL of your API
         }
 
         public async Task<IActionResult> Index()

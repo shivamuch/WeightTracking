@@ -27,7 +27,7 @@ namespace XUnitTestWeightTracking
 
             // Assert
             Assert.Equal("That you are too thin.", result.lblMessage);
-            Assert.Equal("48.65  KG  ", result.lblIdealWeight1);
+            Assert.Equal("48.65  KG  ", result.SetlblIdealWeight1);
             Assert.Equal("61.46  KG  ", result.lblIdealWeight2);
         }
 
@@ -46,7 +46,7 @@ namespace XUnitTestWeightTracking
 
             // Assert
             Assert.Equal("That you have overweight.", result.lblMessage);
-            Assert.Equal("48.65  KG  ", result.lblIdealWeight1);
+            Assert.Equal("48.65  KG  ", result.SetlblIdealWeight1);
             Assert.Equal("61.46  KG  ", result.lblIdealWeight2);
         }
         [Fact]
@@ -64,7 +64,7 @@ namespace XUnitTestWeightTracking
 
             // Assert
             Assert.Equal("That you are healthy.", result.lblMessage);
-            Assert.Equal("51.79  KG  ", result.lblIdealWeight1);
+            Assert.Equal("51.79  KG  ", result.SetlblIdealWeight1);
             Assert.Equal("65.42  KG  ", result.lblIdealWeight2);
         }
         // Add more test methods for other scenarios...
@@ -85,7 +85,7 @@ namespace XUnitTestWeightTracking
 
             // Assert
             Assert.Equal("That you are too thin.", result.lblMessage);
-            Assert.Equal("59.66  KG  ", result.lblIdealWeight1);
+            Assert.Equal("59.66  KG  ", result.SetlblIdealWeight1);
             Assert.Equal("74.58  KG  ", result.lblIdealWeight2);
         }
 
@@ -104,7 +104,7 @@ namespace XUnitTestWeightTracking
 
             // Assert
             Assert.Equal("That you have overweight.", result.lblMessage);
-            Assert.Equal("57.92  KG  ", result.lblIdealWeight1);
+            Assert.Equal("57.92  KG  ", result.SetlblIdealWeight1);
             Assert.Equal("72.4  KG  ", result.lblIdealWeight2);
         }
         [Fact]
@@ -122,10 +122,10 @@ namespace XUnitTestWeightTracking
 
             // Assert
             Assert.Equal("That you are healthy.", result.lblMessage);
-            Assert.Equal("57.92  KG  ", result.lblIdealWeight1);
+            Assert.Equal("57.92  KG  ", result.SetlblIdealWeight1);
             Assert.Equal("72.4  KG  ", result.lblIdealWeight2);
         }
     }
-
+}
 
 
