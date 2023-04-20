@@ -7,8 +7,12 @@ I worked on Weight Tracker Application, in this app I will not only used CRUD fu
 
 # ScreenShots
 
-![2023-04-14](https://user-images.githubusercontent.com/113265259/232180572-0af03f66-f109-40b7-897d-de030df49d27.png)
-![2023-04-14 (1)](https://user-images.githubusercontent.com/113265259/232180576-1f73a51a-2b40-487b-ae00-f27d1547e60d.png)
+<img width="1470" alt="Screenshot 2023-04-20 at 6 45 59 PM" src="https://user-images.githubusercontent.com/113265259/233507009-b1ef6e5b-034c-46c5-860d-c1afe5a0543e.png">
+
+<img width="1469" alt="Screenshot 2023-04-20 at 6 48 17 PM" src="https://user-images.githubusercontent.com/113265259/233507013-fdb035a1-f114-4b84-9f4b-d60e39fcea23.png">
+
+<img width="1470" alt="Screenshot 2023-04-20 at 6 45 12 PM" src="https://user-images.githubusercontent.com/113265259/233506999-87f2b60d-dce1-4b23-9c81-3118e2abcb13.png">
+
 
 # Check-In 1
 * Models and Controllers created
@@ -24,6 +28,12 @@ I worked on Weight Tracker Application, in this app I will not only used CRUD fu
 * Worked on View and the UI of the APP Project
 * Two Unit Tests Created for Library Projects (BMI Calculator and Weight Tracking)
 
-# Next Steps
-* Need to work properly on Database properly
-* Will add more Views for the workouts and Diet Plan
+# Check-In 3
+* Redesigned the User Interface(UI)
+* Performed Unit Tests
+* Worked on all the Views
+* SQL server connection string
+
+# Improvements & Challenges
+* Will add more pages for workout and Diet.
+* Working on SQL server on macbook
