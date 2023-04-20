@@ -1,13 +1,26 @@
 ﻿@model WeightHistory
+<div style="margin-top: 14%;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="Edit">
+                <div class="modal-header" style="background: #435d7d;">
+                    <h4 class="modal-title" style="color: white;">Weight entry details</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <dl class="row">
+                        <dt class="col-sm-2">Date</dt>
+                        <dd class="col-sm-10">@Model.Date.ToShortDateString()</dd>
+                        <dt class="col-sm-2">Value</dt>
+                        <dd class="col-sm-10">@Model.Value</dd>
+                    </dl>
 
-<h1>Weight entry details</h1>
+                </div>
+                <div class="modal-footer" style="background: #435d7d;">
+                    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
-<dl class="row">
-    <dt class="col-sm-2">Date</dt>
-    <dd class="col-sm-10">@Model.Date.ToShortDateString()</dd>
-    <dt class="col-sm-2">Value</dt>
-    <dd class="col-sm-10">@Model.Value</dd>
-</dl>
-
-<p>
-    <a asp
