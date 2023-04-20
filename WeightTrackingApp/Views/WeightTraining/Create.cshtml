@@ -1,13 +1,26 @@
 ﻿@model WeightHistory
 
-<h1>Create new weight entry</h1>
+<div style="margin-top: 14%;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="Create">
+                <div class="modal-header" style="background: #435d7d;">
+                    <h4 class="modal-title" style="color: white;">Create new <b>WeightEntry</b></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: white;">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label asp-for="Value" class="control-label"></label>
+                        <input asp-for="Value" type="text" class="form-control" required />
+                        <span asp-validation-for="Value" class="text-danger"></span>
+                    </div>
 
-<form asp-action="Create">
-    <div class="form-group">
-        <label asp-for="Value" class="control-label"></label>
-        <input asp-for="Value" class="form-control" />
-        <span asp-validation-for="Value" class="text-danger"></span>
+                </div>
+                <div class="modal-footer" style="background: #435d7d;">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary">Create</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
-</form>
+</div>
