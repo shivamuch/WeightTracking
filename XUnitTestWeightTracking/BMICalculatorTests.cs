@@ -89,7 +89,42 @@ namespace XUnitTestWeightTracking
             Assert.Equal("74.58  KG  ", result.lblIdealWeight2);
         }
 
-        
+        [Fact]
+        public void BMICalculatorResult_ReturnsExpectedResult_ForMaleAndOverWeight()
+        {
+            // Arrange
+            var calculator = new WeightAPIController();
+            var ddlHeight = "Feet";
+            var txtHeight = "5.7";
+            var txtWeight = "80";
+            var rdbGender = "MALE";
+
+            // Act
+            var result = calculator.BMICalculatorResult(ddlHeight, txtHeight, txtWeight, rdbGender);
+
+            // Assert
+            Assert.Equal("That you have overweight.", result.lblMessage);
+            Assert.Equal("57.92  KG  ", result.SetlblIdealWeight1);
+            Assert.Equal("72.4  KG  ", result.lblIdealWeight2);
+        }
+        [Fact]
+        public void BMICalculatorResult_ReturnsExpectedResult_ForMaleAndHealthyWeight()
+        {
+            // Arrange
+            var calculator = new WeightAPIController();
+            var ddlHeight = "Feet";
+            var txtHeight = "5.7";
+            var txtWeight = "60";
+            var rdbGender = "MALE";
+
+            // Act
+            var result = calculator.BMICalculatorResult(ddlHeight, txtHeight, txtWeight, rdbGender);
+
+            // Assert
+            Assert.Equal("That you are healthy.", result.lblMessage);
+            Assert.Equal("57.92  KG  ", result.SetlblIdealWeight1);
+            Assert.Equal("72.4  KG  ", result.lblIdealWeight2);
+        }
     }
 }
 
