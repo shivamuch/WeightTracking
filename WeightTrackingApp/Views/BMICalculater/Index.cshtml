@@ -1,11 +1,11 @@
 ﻿@{
-    ViewData["Title"] = "BMI Calculater";
+        ViewData["Title"] = "BMI Calculater";
 }
 
 @*<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>*@
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
 <article style="margin-bottom:20px;">
     <div class="card">
 
@@ -210,9 +210,7 @@
 </article>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<script>
-
-    $("#btnBMICalCulate").click(function () {
+<script>$("#btnBMICalCulate").click(function () {
         var ddlHeight = $("#ddlHeight").val();
         var txtHeight = $("#txtHeight").val();
         var txtWeight = $("#txtWeight").val();
@@ -236,7 +234,7 @@
                     $("#txtYourBmi").text(data.txtYourBmi);
                     $("#lblMessage").text(data.lblMessage);
                     $("#lblIdealWeight1").text(data.lblIdealWeight1);
-                    $("#lblIdealWeight2").text(data.setlblIdealWeight1);
+                    $("#lblIdealWeight2").text(data.lblIdealWeight2);
                     if (data.lblMessageError != null && data.lblMessageError != '') {
                         $("#lblMessageError").text(data.lblMessageError);
                     } else {
@@ -276,5 +274,4 @@
         } else {
             $("#txtWeightError").text('');
         }
-    });
-</script>
+    });</script>
